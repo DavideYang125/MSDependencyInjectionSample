@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using DependencyInjectionDemoConsole.PhoneDemoTwo;
+using System;
 
 namespace DependencyInjectionDemoConsole
 {
@@ -6,7 +8,13 @@ namespace DependencyInjectionDemoConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            HuaWeiPhone huaweiPhone = new HuaWeiPhone();
+            PhoneDemoTwo.XiaoMing xiaoming = new PhoneDemoTwo.XiaoMing(huaweiPhone);
+
+            xiaoming.Play();
+
+            Console.ReadKey();
+            //Console.WriteLine("Hello World!");
         }
     }
 }
